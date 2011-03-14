@@ -278,9 +278,8 @@ public class Memory extends PreferenceActivity implements OnCancelListener {
             return true;
         } else if (formatToggles.containsKey(clickedItem)) {
             String path = formatToggles.get(clickedItem);
-            //TODO: REMOVE 1 line
-            Log.e(TAG, "GOING TO FORMAT: " + path + "  !!!");
             Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.putExtra("path", path);
             intent.setClass(this, com.android.settings.MediaFormat.class);
             startActivity(intent);
             return true;

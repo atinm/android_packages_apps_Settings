@@ -57,10 +57,12 @@ public class MediaFormat extends Activity {
                 if (Utils.isMonkeyRunning()) {
                     return;
                 }
-                Log.e("MediaFormat", "GOING TO FORMAT: \" + path + \"  !!!");
-                //Intent intent = new Intent(ExternalStorageFormatter.FORMAT_ONLY);
-                //intent.setComponent(ExternalStorageFormatter.COMPONENT_NAME);
-                //startService(intent);
+                Intent i = getIntent();
+                String path = i.getStringExtra("path");
+                Intent intent = new Intent(ExternalStorageFormatter.FORMAT_ONLY);
+                intent.putExtra("path", path);
+                intent.setComponent(ExternalStorageFormatter.COMPONENT_NAME);
+                startService(intent);
                 finish();
             }
         };
