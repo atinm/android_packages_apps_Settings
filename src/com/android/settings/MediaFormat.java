@@ -25,6 +25,8 @@ import android.widget.Button;
 
 import com.android.internal.os.storage.ExternalStorageFormatter;
 
+//TODO: REMOVE 1 line
+import android.util.Log;
 /**
  * Confirm and execute a format of the sdcard.
  * Multiple confirmations are required: first, a general "are you sure
@@ -55,9 +57,10 @@ public class MediaFormat extends Activity {
                 if (Utils.isMonkeyRunning()) {
                     return;
                 }
-                Intent intent = new Intent(ExternalStorageFormatter.FORMAT_ONLY);
-                intent.setComponent(ExternalStorageFormatter.COMPONENT_NAME);
-                startService(intent);
+                Log.e("MediaFormat", "GOING TO FORMAT: \" + path + \"  !!!");
+                //Intent intent = new Intent(ExternalStorageFormatter.FORMAT_ONLY);
+                //intent.setComponent(ExternalStorageFormatter.COMPONENT_NAME);
+                //startService(intent);
                 finish();
             }
         };
