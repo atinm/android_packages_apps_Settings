@@ -25,8 +25,6 @@ import android.widget.Button;
 
 import com.android.internal.os.storage.ExternalStorageFormatter;
 
-//TODO: REMOVE 1 line
-import android.util.Log;
 /**
  * Confirm and execute a format of the sdcard.
  * Multiple confirmations are required: first, a general "are you sure
