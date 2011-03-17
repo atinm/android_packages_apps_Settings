@@ -169,7 +169,7 @@ public class Memory extends PreferenceActivity implements OnCancelListener {
             category.addPreference(available);
 
             Preference unmount = new Preference(this, null,
-                    android.R.attr.preferenceInformationStyle);
+                    android.R.attr.preferenceStyle);
             unmount.setKey(MEMORY_SD_MOUNT_TOGGLE + path);
             unmount.setEnabled(true);
             unmount.setTitle(R.string.sd_eject);
@@ -178,11 +178,11 @@ public class Memory extends PreferenceActivity implements OnCancelListener {
             mountToggles.put(MEMORY_SD_MOUNT_TOGGLE + path, path);
 
             Preference format = new Preference(this, null,
-                    android.R.attr.preferenceInformationStyle);
+                    android.R.attr.preferenceStyle);
             format.setKey(MEMORY_SD_FORMAT + path);
+            format.setEnabled(true);
             format.setTitle(R.string.sd_format);
             format.setSummary(R.string.sd_format_summary);
-            format.setEnabled(true);
             category.addPreference(format);
             formatToggles.put(MEMORY_SD_FORMAT + path, path);
         }
